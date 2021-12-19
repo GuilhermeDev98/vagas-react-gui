@@ -26,11 +26,6 @@ const Main = () => {
     return (
         <>
             <Grid style={{textAlign: 'center', marginTop: '6%'}}>
-                <FormControl sx={{ m: 1 }} style={{width: '60%', marginTop: '2%'}} variant="standard">
-                <Input
-                    startAdornment={<InputAdornment position="start"><SearchIcon/></InputAdornment>}
-                />
-                </FormControl>
             </Grid>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }} style={{margin: '2%'}}>
                 { Vagas && Vagas.map(vaga => <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}><VacancyCard vaga={vaga}/></div>)}
