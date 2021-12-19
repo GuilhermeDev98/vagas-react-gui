@@ -17,16 +17,20 @@ const Footer = () => {
             Desenvolvido com ❤️ por <a href='https://github.com/GuilhermeDev98' target="_blank" rel="noreferrer" style={{color: 'white', textDecoration: 'none'}}>Guilherme Santos</a>
           </Typography>
             <div>
-              <IconButton
-                color="inherit"
-              >
-                <GitHubIcon />
-              </IconButton>
-              <IconButton
-                color="inherit"
-              >
-                <LinkedInIcon />
-              </IconButton>
+              <a href="https://github.com/GuilhermeDev98" target="_blank" rel="noreferrer" style={{color: 'white', textDecoration: 'none'}}>
+                <IconButton
+                  color="inherit"
+                >
+                  <GitHubIcon />
+                </IconButton>
+              </a>
+              <a href="https://www.linkedin.com/in/guilhermesantos98/" target="_blank" rel="noreferrer" style={{color: 'white', textDecoration: 'none'}}>
+                <IconButton
+                  color="inherit"
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </a>
             </div>
         </Toolbar>
       </AppBar>

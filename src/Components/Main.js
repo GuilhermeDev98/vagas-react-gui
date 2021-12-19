@@ -1,8 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import Input from '@mui/material/Input';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
-import SearchIcon from '@mui/icons-material/Search';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import VacancyCard from './VacancyCard';
