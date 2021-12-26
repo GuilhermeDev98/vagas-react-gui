@@ -27,7 +27,7 @@ const SavedJobs = () => {
             });
         } else {
             const vagas = data.map(vaga => vaga.job)
-            if (vagas.length != 0) SetVagas(vagas)
+            if (vagas.length !== 0) SetVagas(vagas)
         }
 
         SetLoading(false)

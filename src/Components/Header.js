@@ -3,14 +3,9 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import Menu from '@mui/material/Menu';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -24,14 +19,12 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
 
-  const [user, setUser] = useState({})
   const [auth, setAuth] = useState(false);
 
   const [open, setOpen] = useState(false);
   const [modalLoginOpen, setModalLoginOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -44,11 +37,6 @@ export default function Header() {
   const handleCloseModalLogin = () => {
     setModalLoginOpen(false)
   }
-
-  const handleMenu = (event) => {
-    console.log(event)
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleLoginUser = async data => {
     const { email, password } = data
@@ -70,8 +58,22 @@ export default function Header() {
         progress: undefined,
       });
     }
+
     if (session) {
       setAuth(true)
+    }
+
+    if (error) {
+      handleCloseModalLogin()
+      toast(error.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   }
 
