@@ -33,9 +33,8 @@ const VacancyCard = ({ vaga }) => {
 
     const HandleSaveJob = async () => {
         const session = JSON.parse(localStorage.getItem('supabase.auth.token'))
-        console.log(vaga)
 
-        const { data } = await supabase.from('saved_jobs').select('*').match({ 'user_id': session.currentSession.user.id, 'job_id': vaga.id })
+        const {data} = await supabase.from('saved_jobs').select('*').match({ 'user_id': session.currentSession.user.id, 'job_id': vaga.number })
 
         if (data.length > 0) {
             toast('Vaga Já foi Salva Anteriormente !', {
