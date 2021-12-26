@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import VacancyCard from './VacancyCard';
 import axios from 'axios';
-
-
+import Grid from '@mui/material/Grid'
 
 const Main = () => {
 
@@ -21,10 +19,10 @@ const Main = () => {
 
     return (
         <>
-            <Grid style={{textAlign: 'center', marginTop: '6%'}}>
+            <Grid style={{textAlign: 'center'}}>
             </Grid>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }} style={{margin: '2%'}}>
-                { Vagas && Vagas.map(vaga => <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}><VacancyCard vaga={vaga}/></div>)}
+                { Vagas && Vagas.map((vaga, index) => <div key={index} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}><VacancyCard vaga={vaga}/></div>)}
             </Box>
         </>
     )
